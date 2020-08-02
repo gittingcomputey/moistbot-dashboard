@@ -1,0 +1,45 @@
+@import './utils';
+
+.main {
+  background-color: $white;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.picsPage {
+  &__container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+  }
+
+  &__pic-box {
+    & img {
+      max-width: 80vw;
+      max-height: 80vh;
+    }
+  }
+
+  &__hl-box {
+    padding: 2rem 1.5rem;
+
+    & h1 {
+      font-size: 4rem;
+      font-family: 'Rye', cursive;
+      color: $shadow--light;
+    }
+
+    & h3 {
+      font-family: 'Rokkitt', serif;
+      font-size: 2rem;
+    }
+  }
+
+  &__box {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  border: solid .7rem $shadow;
+  }
+}

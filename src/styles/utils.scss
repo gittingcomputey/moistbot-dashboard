@@ -1,0 +1,144 @@
+@mixin mediaquery ($breakpoint) {
+	@if $breakpoint == tiny {
+    @media (max-width: 25em) { @content }; //400px
+  };
+
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { @content }; //600
+  };
+
+	@if $breakpoint == phoneland {
+    @media (max-width: 49.5em) and (orientation: landscape){ @content }; //792
+  };
+
+	@if $breakpoint == iphonex {
+    @media (width: 375px ) and (height: 812px ) and (-webkit-device-pixel-ratio : 3) { @content }; //600
+  };
+
+
+  @if $breakpoint == tabport {
+    @media (max-width: 56.25em) { @content }; //900
+  };
+
+	@if $breakpoint == tabipad {
+    @media (min-width: 47em) and (max-width: 49em) and (orientation: portrait) { @content };
+  };
+
+  @if $breakpoint == tabland {
+    @media (max-width: 75em) { @content }; //1200
+  };
+
+	@if $breakpoint == landipad {
+    @media (width: 64em) and (orientation: landscape) { @content }; //1200
+  };
+
+
+  @if $breakpoint == bigpic {
+    @media (min-width: 75em) { @content }; //1200
+  };
+
+	@if $breakpoint == bigscreen {
+    @media (min-width: 112.5em) { @content }; //1800+
+  };
+}
+
+//base
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  @include mediaquery (tabland) {
+    font-size: 56.25%;
+  };
+
+  @include mediaquery (tabport) {
+    font-size: 40%;
+  };
+
+  @include mediaquery (phone) {
+    font-size: 28%;
+  };
+
+  @include mediaquery (tiny) {
+  font-size: 30%;
+  };
+
+  @include mediaquery (bigscreen) {
+    font-size: 70%;
+  };
+
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+// Custom colors
+$link: silver;
+$link--blue: #2e76cf;
+$link--visited: #000099;
+$shadow: #262626;
+$shadow--light: rgba($shadow, .9);
+$shadow--bitless: rgba($shadow, .6);
+$shadow--less: rgba($shadow, .3);
+$shadow--tiny: rgba($shadow, .1);
+$nav: #303030;
+$footer--nav: #40444b;
+$nav--green: #52930b;
+$light-grey-bg: #fafafa;
+$black--kelpaint: #282828;
+$black--light: rgba($black--kelpaint, .7);
+$offwhite: #f3f3f3;
+$offwhite--lighter: (#f3f3f3, .5);
+$aboutImage-bg: #F0F5F7;
+$tree: #4d544f;
+$candle: #fffcbb;
+$leaf--green: #3d583d;
+
+
+//Utility colors
+$black: #000;
+$white: #fff;
+$beige: #eCe6d1;
+$orange: #f60;
+$red: #f00;
+$blue: #00f;
+$aqua: #0ff;
+$yellow: #ff0;
+$lime: #0f0;
+$fuchsia: #f0f;
+$green: #008000;
+$olive: #808000;
+$teal: #008080;
+$purple: #800080;
+$silver: #c0c0c0;
+$maroon: #800000;
+$gray: #808080;
+
+
+// Utilities
+
+//center text within div
+.u-center-text { text-align: center; }
+
+//margins
+.u-margin-bottom-large { margin-bottom: 8rem; }
+.u-margin-bottom-medium { margin-bottom: 4rem; }
+.u-margin-bottom-small { margin-bottom: 2rem; }
+.u-margin-bottom-tiny { margin-bottom: .3rem; }
+
+.u-margin-top-large { margin-top: 8rem; }
+.u-margin-top-medium { margin-top: 4rem; }
+.u-margin-top-small { margin-top: 2rem; }
+.u-margin-top-tiny { margin-top: .3rem; }
+
+.transparency {
+  background-color: transparent;
+}
