@@ -17,13 +17,13 @@
 
   &__pic-box {
     & img {
-      max-width: 80vw;
-      max-height: 80vh;
+      max-width: 84vw;
+      max-height: 84vh;
     }
   }
 
   &__hl-box {
-    padding: 2rem 1.5rem;
+    padding: 2rem;
 
     & h1 {
       font-size: 4rem;
@@ -40,6 +40,64 @@
   &__box {
   grid-column-start: 1;
   grid-column-end: -1;
-  border: solid .7rem $shadow;
+  border-top: solid .3rem $shadow;
+  border-bottom: solid .3rem $shadow;
   }
+}
+
+.uploader {
+  &__container {
+    height: 9rem;
+    background-color: $shadow--light;
+  }
+
+  &__box {
+    padding: 2rem;
+    text-align: center;
+
+    & h4 {
+      text-transform: uppercase;
+      font-size: .7rem;
+      color: $white;
+    }
+  }
+
+  &__button {
+    background-color: $link--blue;
+    color: $white;
+    text-transform: uppercase;
+    font-family: 'Share Tech', sans-serif;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: .4rem;
+    padding: .5rem 1rem;
+    margin: 1rem;
+    min-width: 8rem;
+  }
+}
+
+.list {
+  &__container {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    background-color: $light-grey-bg;
+    display: grid;
+    grid-template-columns: auto;
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Share Tech', sans-serif;
+    text-transform: uppercase;
+    border-bottom: solid .3rem $shadow;
+  }
+
+  &__box {
+    padding: 1rem 25rem;
+
+    & button {
+      margin: .2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+
 }
