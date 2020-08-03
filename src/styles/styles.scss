@@ -33,7 +33,8 @@
 
     & h3 {
       font-family: 'Rokkitt', serif;
-      font-size: 2rem;
+      font-size: 2.7rem;
+      line-height: 4rem;
     }
   }
 
@@ -47,17 +48,17 @@
 
 .uploader {
   &__container {
-    height: 9rem;
+    height: 12rem;
     background-color: $shadow--light;
   }
 
   &__box {
-    padding: 2rem;
+    padding: 4rem 2rem;
     text-align: center;
 
     & h4 {
       text-transform: uppercase;
-      font-size: .7rem;
+      font-size: .8rem;
       color: $white;
     }
   }
@@ -80,7 +81,7 @@
   &__container {
     grid-column-start: 1;
     grid-column-end: -1;
-    background-color: $light-grey-bg;
+    background-image: linear-gradient(to right, $black, $shadow, $shadow, $black);
     display: grid;
     grid-template-columns: auto;
     text-align: center;
@@ -88,16 +89,109 @@
     font-family: 'Share Tech', sans-serif;
     text-transform: uppercase;
     border-bottom: solid .3rem $shadow;
-  }
 
-  &__box {
-    padding: 1rem 25rem;
-
-    & button {
-      margin: .2rem;
-      font-size: 1.2rem;
+    & h4 {
+      color: $white;
     }
   }
 
+  &__box {
+    padding: 1rem 45rem;
 
+
+    & button {
+      min-width: 7rem;
+      margin: .4rem .2rem;
+      font-size: 1rem;
+      background-color: $nav--green;
+      color: $white;
+      border: none;
+      border-radius: .2rem;
+      padding: .4rem .6rem;
+    }
+  }
+}
+
+.gallery {
+
+  &__container {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  &__box {
+    width: 100%;
+  }
+}
+
+.folders {
+  &__container {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__title-box {
+    font-family: 'New Rocker', 'Rokkitt', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    padding: 3rem 0;
+  }
+}
+
+.pic-card {
+  &__container {
+    display: inline-block;
+    margin: 1rem;
+  }
+
+  &__box {
+    border: solid $shadow--less .2rem;
+    border-radius: .6rem;
+    width: 22rem;
+    text-align: center;
+  }
+
+  &__box {
+    padding: 1rem;
+
+    & h2 {
+      color: $shadow--light;
+    }
+  }
+
+  &__pic-box {
+    padding: 1rem;
+
+    & img {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__button-box {
+    padding: 1rem;
+
+    & button {
+      margin: .2rem;
+      border: none;
+      border-radius: .4rem;
+      padding: .3rem .7rem;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      font-family: 'Rokkitt', sans-serif;
+    }
+  }
+
+  &__rename {
+    background-color: $shadow--less;
+    color: $white;
+  }
+
+  &__delete {
+    background-color: $red;
+    color: $white;
+  }
 }

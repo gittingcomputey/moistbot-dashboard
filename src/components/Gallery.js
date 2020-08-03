@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PicCard from './PicCard';
 
 
 class Gallery extends React.Component {
@@ -6,7 +7,16 @@ class Gallery extends React.Component {
     return (
       <div className="gallery__container">
         <div className="gallery__box">
-          pictures
+          <PicCard />
+          <PicCard />
+          <PicCard />
+          <PicCard />
+          <PicCard />
+          <PicCard />
+          <PicCard />
+          <PicCard />
+          <PicCard />
+          <PicCard />
         </div>
       </div>
     )
