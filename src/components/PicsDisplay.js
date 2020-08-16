@@ -1,7 +1,7 @@
-import React from 'react'
-import FileUploader from './FileUploader'
-import FolderList from './FolderList'
-import Gallery from './Gallery'
+import React from 'react';
+import FileUploader from './FileUploader';
+// import FolderList from './FolderList';
+import Gallery from './Gallery';
 
 
 class PicsDisplay extends React.Component {
@@ -15,23 +15,34 @@ class PicsDisplay extends React.Component {
             Hello, Matteo.
             <br></br>
             <br></br>
-            <br></br>
             Here, you can manage the pictures and memes in your moistBot arsenal.
             <br></br>
             <br></br>
-            <br></br>
-            <h3>
-            Upload files in jpg or png format.
-            <br></br>
-            You can rename the pics after upload if necessary.
-            <br></br>
-            The command for each pic is the name of the pic, prefaced by two dashes. Commands are case sensitive. (--exampleCommand)
-            <br></br>
-            You can add folders to better organize pics. The folder name will be part of the command, so keep the name short (--folderName/exampleCommand).
-            This is where click to copy really shows its promise.
-            Click on any pic to copy the command onto your clipboard and save yourself some typing. :)
-            <br></br>
-            </h3>
+            <ul>
+              <li>Files can be in jpg or png format.</li>
+                <br></br>
+              <li>Commands to the bot are made with a two dash prefix.
+                <br></br>
+                <span className="lighter">--exampleCommand </span></li>
+                <br></br>
+              <li>Commands are case sensitive. <br></br>
+                <span className="lighter">--exampleCommand </span> and <span className="lighter"> --examplecommand </span> count as two different commands.</li>
+                <br></br>
+              <li>The command for each pic/meme is the name of the file.</li>
+                <br></br>
+              <li>You can add folders to better organize pics.
+                <br></br>
+                The folder name will become part of the command.
+                <br></br>
+                <span className="lighter">--folderName/exampleCommand</span>
+                  <br></br>
+                  You are currently in the main gallery. Pics in here do not have a folder name.
+                </li>
+                <br></br>
+              <li>
+                To copy a command to the clipboard, click on the pic.</li>
+                <br></br>
+            </ul>
           </h1>
         </div>
 
@@ -39,7 +50,6 @@ class PicsDisplay extends React.Component {
           <FileUploader />
         </div>
 
-        <FolderList />
         <Gallery />
       </div>
     )
