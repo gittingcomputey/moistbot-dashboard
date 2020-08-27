@@ -68,7 +68,7 @@ body {
     text-align: center;
 
     & input[type="file"] {
-        color: $nav--green;
+        color: transparent;
 
         &:hover {
           cursor: pointer;
@@ -104,8 +104,6 @@ body {
   &__browse {
     padding-left: 18rem;
     padding-bottom: .4rem;
-    text-align: center;
-    color: $white;
   }
 
   &__results-container {

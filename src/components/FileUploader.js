@@ -33,7 +33,7 @@ const FileUploader = () => {
       });
 
       setMessage('File Uploaded successfully');
-      setTimeout(() => setFilename('pic upload - main gallery'), 3000
+      setTimeout(() => setFilename('pic upload - main gallery', setMessage('') ), 3000
       );
     } catch (err) {
       if (err.response.status === 500) {
@@ -53,7 +53,7 @@ const FileUploader = () => {
               <br></br>
               <div>
                 <input
-                className="uploader__browse" type="file" id="choose-file"
+                className="uploader__browse" type="file" id="choose-file" data-buttonText="Upload!" data-input="false"
                 accept="image/png, image/jpg, image/jpeg" onChange={onChange}/>
               </div>
               <div>
@@ -69,9 +69,3 @@ const FileUploader = () => {
 }
 
 export default FileUploader;
-
-// <div className="uploader__results-container">
-//   <div className="uploader__results-box">
-//     <h3>{ uploadedFile.fileName } was uploaded successfully</h3>
-//   </div>
-// </div>
