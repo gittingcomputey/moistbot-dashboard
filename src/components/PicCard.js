@@ -9,7 +9,7 @@ class PicCard extends React.Component {
         <div className="pic-card__box">
           <h2>botCommand</h2>
           <div className="pic-card__pic-box">
-            <img alt="pic" src={faker.image.avatar()}/>
+            <img className="pic-card__pic" alt="pic" src={faker.image.avatar()}/>
           </div>
           <div className="pic-card__button-box">
             <button className="pic-card__rename">Rename</button>

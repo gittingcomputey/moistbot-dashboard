@@ -1,51 +1,129 @@
 @import './utils';
 
-body {
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+
+
+//base
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
   margin: 0;
+  padding: 0;
 }
+
+html {
+    @include mediaquery (tabland) {
+      font-size: 56.25%;
+    };
+
+    @include mediaquery (tabport) {
+      font-size: 40%;
+    };
+
+    @include mediaquery (phone) {
+      font-size: 28%;
+    };
+
+    @include mediaquery (tiny) {
+    font-size: 30%;
+    };
+
+    @include mediaquery (bigscreen) {
+      font-size: 70%;
+    };
+
+    font-size: 62.5%;
+}
+
+button {
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+
 
 .main {
   background-color: $white;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
+  // min-height: 100vh;
 }
 
-.picsPage {
+.Header {
+
   &__container {
-    height: 100%;
-    width: 100%;
+
+  }
+
+  &__header--box {
     display: grid;
-    grid-template-columns: .3fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    width: 100vw;
+    position: relative;
   }
 
   &__pic-box {
+    justify-self: center;
     & img {
-      max-width: 84vw;
-      max-height: 84vh;
+      max-width: 34vw;
+      // max-height: 100vh;
     }
   }
 
+
   &__hl-box {
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 4rem;
+    max-width: 100%;
 
     & h1 {
-      font-size: 4rem;
+      text-align: center;
+      font-size: 3rem;
       font-family: 'Rye', cursive;
       color: $shadow--light;
+      padding-bottom: 3rem;
     }
 
     & ul {
-      line-height: 1rem;
+      line-height: 1.5rem;
+      padding-left: 2rem;
     }
 
     & li {
       font-family: 'Rokkitt', serif;
-      font-size: 2.7rem;
-      line-height: 2.9rem;
-      margin-left: 7rem;
+      font-size: 2.5rem;
+      line-height: 2.6rem;
     }
+  }
+
+  &__h5 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  &__h6 {
+    font-size: 1.7rem;
+    padding-bottom: 3rem;
+  }
+
+  &__datebox {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 1rem;
+  }
+
+  &__dateTime {
+    color: $robeViolet;
+    font-family: 'Wallpoet', cursive;
+    letter-spacing: .2rem;
+    display: inline-block;
+    font-size: 1rem;
+    padding: .5rem 2rem 9rem 0;
   }
 
   &__box {
@@ -56,13 +134,16 @@ body {
   }
 }
 
+
+
+
 .uploader {
   &__container {
     background-color: $shadow--light;
   }
 
   &__box {
-    padding: 0 0 1.5rem;
+    // padding: 0 0 1.5rem;
     display: grid;
     grid-template-columns: 1fr;
     text-align: center;
@@ -73,7 +154,9 @@ body {
         &:hover {
           cursor: pointer;
         }
+
     }
+
   }
 
   &__button {
@@ -99,10 +182,23 @@ body {
     color: $white;
     font-size: 2.1rem;
     text-transform: uppercase;
+
+
+  }
+
+  &__browse--wrapper {
+  background-color: transparent;
+  display: flex;
+  width: 50%;
+  height: 100%;
+  transform: translateX(65%);
+
+    & input[type="file"]  {
+
+    }
   }
 
   &__browse {
-    padding-left: 18rem;
     padding-bottom: .4rem;
   }
 
@@ -157,15 +253,18 @@ body {
 .gallery {
 
   &__container {
-    grid-column-start: 1;
-    grid-column-end: -1;
-    padding: 2rem;
+    // padding: 2rem;
     text-align: center;
   }
 
   &__box {
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
   }
+
 }
 
 .folders {
@@ -184,14 +283,14 @@ body {
 
 .pic-card {
   &__container {
-    display: inline-block;
-    margin: 1rem;
+    // width: 100%;
+    margin: 1rem 0;
+    padding: 2rem 0;
   }
 
   &__box {
     border: solid $shadow--less .2rem;
     border-radius: .6rem;
-    width: 22rem;
     text-align: center;
   }
 
@@ -211,6 +310,11 @@ body {
         cursor: pointer;
       }
     }
+  }
+
+  &__pic {
+    max-width: 100%;
+    max-height: 100%;
   }
 
   &__button-box {

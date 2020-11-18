@@ -2,11 +2,15 @@ import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 import Message from './msg';
 
+
+
 const FileUploader = () => {
-  const [file, setFile] = useState('');
-  const [filename, setFilename] = useState('pic upload - main gallery');
+
+  const [ file, setFile] = useState('');
+  const [ filename, setFilename] = useState('pic upload - main gallery');
   const [ uploadedFile, setUploadedFile] = useState({});
   const [ message, setMessage ] = useState('');
+
 
   const onChange = e => {
     setFile(e.target.files[0]);
@@ -26,6 +30,7 @@ const FileUploader = () => {
       });
 
       const {fileName, filePath} = res.data;
+
 
       setUploadedFile({
         fileName,
@@ -51,10 +56,11 @@ const FileUploader = () => {
           <div className="uploader__box">
               <label className="uploader__label" htmlFor="choose-file">{filename}</label>
               <br></br>
-              <div>
+              <div className="uploader__browse--wrapper">
                 <input
                 className="uploader__browse" type="file" id="choose-file" data-buttonText="Upload!" data-input="false"
-                accept="image/png, image/jpg, image/jpeg" onChange={onChange}/>
+                accept="image/png, image/jpg, image/jpeg" onChange={onChange}
+                />
               </div>
               <div>
                 <button className="uploader__button cancel" type="submit" value="submit">cancel</button>
